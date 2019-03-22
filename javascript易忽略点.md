@@ -31,3 +31,32 @@ console.log(name); // undefined
    ```
    js 属于弱语言，声明变量后，根据赋值确定变量的类型，声明变量未赋值，其值在编译时会自动赋值为undefined,变量均为
    对象，当声明一个变量时，就创建了一个对象
+5. js 变量用new赋值会创建一个连接到该变量prototype成员的新对象，同时该变量如果是对象或者数组等引用型变量的话，里面的
+   this将绑定到这个新的对象上，其实例话对象instanceof 指向的是引用型的变量Objec,否则则指向变量的本身，而如果变量没有
+   用new 赋值，返回的是该变量的默认值或者返回值
+   ```
+   function single () {
+      var a= 'abc';
+      return a;
+   }
+   
+  function testWithReturn () {
+      var t= [1,2,3];
+      return t;
+   }
+   var single= single();
+   var testSingle= new single();
+   var test = testWithReturn();
+   var newTest = new testWithReturn();
+   console.log(single); // 'abc'
+   console.log(testSingle); // [object object]
+   console.log(testSingle instanceof single); // true
+   console.log(test); // [1,2,3]
+   console.log(newTest); // [1,2,3]
+   console.log(test instanceof Array); // true
+   // 返回的是引用型类型，有没有new,都得到引用类型，有了new,也不返回引用的prototype
+   console.log(newTest instanceof Array); // true
+   console.log(newTest instanceof testWithReturn); // false
+   ```
+6. js变量的划分为原始型和引用型，也叫字面型变量和引用型变量，字面型变量包括Undefined,Unll,String,Number,Boolean,它的
+   值直接存储在变量访问的位置（栈），引用型变量包括Array,Objec,Function,它的值存储在变量值的一个指针，指向存储对象的内存处（堆）
