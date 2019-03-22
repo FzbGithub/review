@@ -21,3 +21,13 @@ console.log(name); // undefined
    some.name= 'change' // const是常量，常量的对象对其属性多次赋值不会报错
    ```
 3. static、final在js中貌似不能用来声明变量的，也没有这几个声明的关键字，如有，后期改正
+4. js 的数据类型有字符串String、数字Number、布尔值Boolean、数组Array、对象Object、Null、Undefined
+   ```
+   var name= new String();
+   var x   = new Number();
+   var y   = new Boolean(true);
+   var z   = new Array();
+   var t   = new Object();
+   ```
+   js 属于弱语言，声明变量后，根据赋值确定变量的类型，声明变量未赋值，其值在编译时会自动赋值为undefined,变量均为
+   对象，当声明一个变量时，就创建了一个对象
