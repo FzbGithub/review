@@ -57,6 +57,3 @@ console.log(name); // undefined
    console.log(newTest instanceof Array); // true
    console.log(newTest instanceof testWithReturn); // false
    ```
-6. js变量的划分为原始型和引用型，也叫字面型变量和引用型变量，字面型变量包括Undefined,Unll,String,Number,Boolean,
-   它的值直接存储在变量访问的位置（栈），引用型变量包括Array,Objec,Function,它的值存储在变量值的一个指针，指向存储
-   对象的内存处（堆）
